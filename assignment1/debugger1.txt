@@ -1,0 +1,51 @@
+Scott Ewing
+CS 202
+Assignment 1
+
+filename: debugger1.txt
+Discussion of using the unix debugging tools
+
+
+I made extensive use of both GDB and Valgrind for this project. At every step of
+the way, for each class I made, I tested it extensively and used Valgrind to
+make sure there were no memory leaks.
+
+Every time there was an unexpected error or behavior that wasn't what I expected
+-- not just core dumps or seg-faults -- I would use GDB and set up break points
+at each function to take a closer look.
+
+Over the course of ths assignment I learned a few new commands in GDB as well.
+1) 'l' which shows you the block of code around the line you are current stopped
+   at
+2) The difference between break and step, where break takes you through the
+current function while Step takes you into sub-routines. 
+
+By making use of these commands and setting up break points I was able to delve
+deep into my program as it was running to see how it was behaving at every step
+of the way. It made it much easier to find out where things were going wrong.
+
+Also, by testing every new class one at a time rather than trying to wait until
+everything was put together, it was easy to keep from being overwhelmed. And by
+also using Valgrind to ensure there were no memory leaks, by the time my program
+was finished, bugs were at a minimum, and there were no possible memory leaks. 
+
+At this point, I compile using the -g flag every time, knowing that I may be
+called upon to run GDB at every compile. 
+
+There were many parts of the code that I used GDB to help me track down bugs. I
+specifically used it for the contents objects, setting up adjacency lists, and
+debugging the rooms class. I ran into one particularly interesting seg-fault
+when I was passing literal character arrays (via the "quotes") and realized I
+was trying to set the first letter toupper, but since the literal array was
+written in a special part of memory, the program was segfaulting when attempting
+to modify this array (inadvertantly). I ended up solving this problem by passing
+the char * as constants, and by making a temporary deep-copy of the literal
+before changing any letters toupper.
+
+
+Overall, GDB and Valgrind are an integral part of my every-day coding routine at
+this point. I think I will be hard pressed to write 400 words about it every
+assignment.
+
+-Scott Ewing
+

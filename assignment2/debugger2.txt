@@ -1,0 +1,52 @@
+Scott Ewing
+CS 202
+Assignment 2
+
+Debugging Tools document
+
+Once again, GDB and Valgrind were invaluable tools in this assignment. GDB in
+particular, since in assignment 1 I already made sure to track down all memory
+leaks and fix them. I did introduce a few more in assignment two, but Valgrind
+was simple and effective in finding these as well and squashing them. 
+
+The first thing I did when approaching Assignment 2 was to make the map load
+from a file rather than having it hard-coded into the program. I ran out of time
+in assignment 1 but decided to go back and rectify the issue in assignment 2. I
+thought it would be a simple matter, but it turned into a arduous affair. 
+
+Thanks to GBD, however, I was able to step through the program find out exactly
+where problems were arising. 
+
+This was a common theme throughout my programming tasks for program 2. Nearly
+every time I encountered a problem beyond compiler errors, I would fire up GDB
+and start steping through the program to find out where problems were occuring. 
+
+For example, when creating the dynamic binding and abstract base class, I
+modified some existing classes to work. But I was noticing the map was getting
+duplicated. When I used GDB to step through the program I realized my sub-class
+was executing a set-up routine as well as calling the parent's constructor --
+which was also calling the set-up routine. Errors like these were a snap to
+track down with GDB.
+
+The trickier bugs that weren't so obvious were also solved with the help of GDB.
+By allowing you to print out the current value of variables and pointers, you
+could really dig into your program and see how things were being set and find
+out where things were going wrong. For example, is that 'next' pointer in the
+flexible array being set properly? Use print to find out! Dereference the head
+and next pointer to see where exactly it's pointing and if it's containing the
+information you expect. 
+
+Once everything was working well, I would fire up Valgrind to make sure I hadn't
+introduced any new memory leaks. I was happy to find that even with 1000
+players, my program would properly deallocate all the memory and leave no
+possible leaks. I did notice, however, that the cctype and cstring class seemed 
+to have lots of valgrind warnings in toupper, strlen, and strcpy, which seemed 
+odd. I would have thought those libraries would be perfectly optimized, but I 
+didn't have the ability to dig into them.
+
+At any rate, I expect GDB and Valgrind to continue to be a integral part of my
+suit of tools used in each assignment. I actually find it surprising that they
+aren't covered more adequately in class. We are mostly left to ourselves to find
+out how they work and how best to use them.
+
+-Scott Ewing

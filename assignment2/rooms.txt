@@ -1,0 +1,53 @@
+Introduction
+~
+Welcome to Math-venture!
+Your goal is to move from room to room, solve the math problems and collect the items to win.
+To collect an item, solve the problem in each room.
+You must collect all the items to complete the level.
+Good luck!|
+~
+~
+Warehouse
+~
+Rows upon rows of crates line this warehouse. After a cursory inspection, you
+determine that there are 35 rows of crates. Each row contains 15 crates. At
+first it seem like the crates are countless, but then you start to wonder how
+many crates exactly there are in this dusty old warehouse...|
+35 * 15
+Screw driver
+A normal philip's head screw driver.
+Manufacturing
+~
+This room looks like an assembly line, but at the moment the machinery is
+silent. As you start making your way through the room you start to fill your
+pockets with nails that you find laying about. Once you're satisfied that you've
+collected them all, you determine that you have 27 in one pocket and 14 in the
+other. Now, if you only had a hammer...|
+27 + 14
+Nails
+Plain steel nails, each about 1 inch long.
+Offices
+~
+Cubicles. So many cubicles. This must be where the busy-work of the office
+routine is completed. Day in and day out, the drones push their pencils and
+partake in the tedium of their work. Looking at the schedules you determine that
+the workers put in a total of 3000 hours over the last 5 days and you wonder how
+many hours that is per day...|
+3000 / 5
+Flashlight
+A standard flashlight.
+Shipping
+~
+This room seems to be where the products are shipped out. Judging by the marks
+on the floor, it looks like there were 60 containers to be shipped, but 32 are
+missing. But it's so dark in here, you can't find a way out except back into the
+complex. If you find a flashlight you might reveal new exits.|
+60 - 32
+Hammer
+This is a typical hammer, useful for driving nails, removing nails, and breaking things.
+Escape
+hidden
+You made it! After collecting all the items, you were able to find the exit and
+break your way out. You've reached freedom!|
+~
+~

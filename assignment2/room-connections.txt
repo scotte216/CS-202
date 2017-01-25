@@ -1,0 +1,24 @@
+// Sets up the connections between all rooms.
+//    
+//            Introduction
+//                 |
+//             Warehouse
+//            /         \
+//        Offices    Manufacturing
+//               \   /
+//                 |
+//              Shipping
+//                 | (hidden, locked)
+//               Escape
+//
+Introduction|Warehouse
+Warehouse|Introduction
+Warehouse|Manufacturing
+Warehouse|Offices
+Manufacturing|Warehouse
+Manufacturing|Shipping
+Offices|Warehouse
+Offices|Shipping
+Shipping|Manufacturing
+Shipping|Offices
+Shipping|Escape

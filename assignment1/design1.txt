@@ -1,0 +1,61 @@
+Scott Ewing
+CS 202
+Assigment 1
+
+Filename: design1.txt
+Design writeup for Assignment 1
+
+This was my first program taking advantage of Object Oriented Programming in a
+meaningful way. I found it very helpful to make use of the "HAS A" and "IS A"
+relationships between various objects and data members. I felt my objects were
+reasonably well constructed, but quickly started to feel overwhelmed. There
+seemed to be a cascading effect when making changes or adding functions to
+certain classes where adding a function meant I had to write multiple functions
+along when dealing with HAS A relationships. 
+
+That is to say, if a Map HAS A vertex and a vertex HAS A node and a node HAS A
+pointer, having the map affect the pointer (in this example) required multiple
+wrapper functions to be built. 
+
+However, despite the number of functions created, none of them were particularly
+difficult. The simplicity of the classes and how they worked together kept the
+difficulty low for each function. 
+
+Briefly, my project had the following classes:
+1) Attributes -- names and descriptions. This is the base class for 2 others.
+2) Contents -- A class to deal with items (attribute objects), organized in an
+   Doubly Linked List handled by a node_cont class. These nodes ARE An Attribute
+3) Problems -- A class to deal with math problems, displaying, solving, etc.
+4) Rooms -- child of an attribute. HAS A Contents object and a Problem object.
+5) Vertex -- child of a room, but more. Each Vertex room has a linear linked
+   list of adjacent rooms, created by a node class.
+6) Map -- A Map class HAS An array of Vertices and deals with traversing about
+   the map and solving problems.
+7) Game -- The Game class HAS A Map object and HAS A Contents object. The
+   contents object is what the player has collected as they solve problems and
+   traverse about the map. It also deals with parsing all user input.
+
+Although required for the assignment I didn't feel like the Double Linked List
+was necessary in my implimentation and added needless extra work for me in
+creating the algorithms as well as extra memory overhead (in terms of excess 
+pointers). Had it been up to me, I would've simply used a LLL. At most the
+player collects 4 items, so the overhead is minimal. 
+
+If I had more time or experience with OOP, I would have seen if there were ways
+to simplify the code. I felt like I had a lot of redundant commands and at times
+I lost track of what everything did. In the grand scheme, this is a relatively
+small program and if I'm having difficulty keeping everything straight, I think
+the problems will be even greater when I deal with a more sizeable program. 
+
+As I got more familiar with the functions I wrote and how they interacted, I
+started to get more efficient at the use of them, and seeing how to improve
+them. For example, passing full objects rather than making functions to seek out
+specific attributes. Although I'm sure I'm nowhere near as efficient as I could
+be. 
+
+Overall, I think my objects performed as expected and as I imagined them, but as
+I improve with my OOP I expect them to become more elegant and refined. By the
+end I was adding functions as I thought of them, rather than having designed
+them all from the beginning. Live and learn!
+
+-Scott Ewing

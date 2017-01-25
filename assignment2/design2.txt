@@ -1,0 +1,64 @@
+Scott Ewing
+CS 202
+Assignment 2
+
+Design Write-up
+
+The purpose of assignment 2 was to familiarize ourselves with dynamic binding.
+For my program, I modified my "game" class to have a base game class with two
+children. One child, single-game, is for single player games, and multi-game is
+for multiplayer games. Although single- and multi-player games are relatively
+similar, there were some specific differences between the two and seemed
+like a solid fit for dynamic binding. 
+
+For example, in both games, players navigate around the map, solve problems, and
+collect items to win. However, for mulitplayer games I instituted a move-limit
+per turn. Each player gets X moves per turn (I chose 2), then the next player
+gets to move/solve problems. In the single player version, the player has no
+limits and move about the map, solving problems at will. To go along with these
+changes, the basic functions needed to change. Also the help files and scoring
+had to change as well, though both had the same functions (just with different
+results). 
+
+To accomplish this dynamic binding, I used a pointer to the base class 
+("base-game"). In the single player game pointed to a "single-game" object. In
+the multiplayer version, an array of base-game pointers were created in a
+flexible array, each pointing to a "multi-game" object.
+
+It wasn't simply just a matter of pointing to the right type of object, however.
+The multi-player game had additional complications and required a wrapper class
+of sorts -- the multiplayer class -- to handle the navigation and organization
+of the flexible array and handling the many different players. It might not be
+obvious at first glance that the program is using dynamic binding, but it's in
+there! 
+
+Additionally, as I went back through my program from assignment 1 I realized I
+could make a few changes to simplify things. For example, in the contents class,
+there was a DLL of items to represent an inventory. Rather than making each node
+in the DLL HAVE A item object, I changed it so each node WAS A item object,
+plus additional functionality. This enabled me to delete several wrapper
+functions, though I left them commented out in the code. 
+
+Since this program was based on an existing program that I wrote when I wasn't
+as familiar with OOP, and not prepared to think about multiplayer, it's not as
+well-written as I would have liked. Parts of it feel a little cobbled together.
+For example, I would have prefered to write it so that our base-game pointer
+could have pointed to a single-player or multi-player object, and not have to
+use a middle-man class (the multiplayer class) for handling parts of it. While
+programming, I first made the program work multi-player then went back and tried
+to incorporate dynamic binding. Had I used dynamic binding from the start, I
+imagine it would have been more elegant.
+
+My experience with the abstract base-class was fairly smooth as well once I
+comprehended how to set them up. Organizing the prototypes was key to my
+understanding and making sure that the right functions were present in the right
+child classes. At first it seemed like unnecessary extra work, but really
+writing null-body functions is pretty easy, and the added power gained from the
+technique is well-worth the slight overhead.
+
+I'm looking forward to starting in on operator overloading in the next
+assignment!
+
+-Scott Ewing
+
+
